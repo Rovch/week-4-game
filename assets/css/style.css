@@ -1,0 +1,21 @@
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  display: inline;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../images/jungle.png");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
