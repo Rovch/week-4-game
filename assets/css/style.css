@@ -8,22 +8,21 @@ p {
   display: inline;
 }
 
+.card {
+  margin: 15px 5px;
+}
+
 .bg {
-  /* The image used */
-  background-image: url("../images/jungle.png");
-  /* Full height */
+  background-image: url("/assets/images/jungle.png");
   height: 100%;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
-
-/* .btn{
-  margin:3px;
-  width: 40%;
-  text-align: center;
-  font-size: 10px;
+/* .card {
+  color: yellow;
+  background-color: transparent;
+  border: none;
 } */

@@ -5,6 +5,17 @@ $(document).ready(function () {
     var rn = Math.floor((Math.random()) * 20);
     return rn;
   }
+
+  function hideA() {
+    var z = $(".a").hide();
+  };
+
+  function showA(card) {
+    card.show();
+  };
+
+  hideA();
+
   //card objects//
   // card 1
   var card1Object = {
@@ -12,7 +23,9 @@ $(document).ready(function () {
     damage1Total: $("#damage1Total").text(),
     attack1Total: "",
     card1: $(".card1"),
-    counter2: 0
+    counter2: 0,
+    attackBtn: $(".attack1")
+
   };
 
   //card2
@@ -21,7 +34,8 @@ $(document).ready(function () {
     damage2Total: $("#damage2Total").text(),
     attack2Total: "",
     card2: $(".card2"),
-    counter2: 0
+    counter2: 0,
+    attackBtn: $(".attack2")
   };
 
   //card3
@@ -30,7 +44,8 @@ $(document).ready(function () {
     damage3Total: $("#damage3Total").text(),
     attack3Total: "",
     card3: $(".card3"),
-    counter3: 0
+    counter3: 0,
+    attackBtn: $(".attack3")
   };
 
   //card4
@@ -39,7 +54,8 @@ $(document).ready(function () {
     damage4Total: $("#damage4Total").text(),
     attack4Total: "",
     card4: $(".card4"),
-    counter4: 0
+    counter4: 0,
+    attackBtn: $(".attack4")
   };
 
 
@@ -66,6 +82,7 @@ $(document).ready(function () {
         }
       });
     }
+
     //card2
     else if (globalCounter === 2) {
       $(".attack2").on("click", function () {
@@ -87,6 +104,7 @@ $(document).ready(function () {
         }
       });
     }
+
     //card3
     else if (globalCounter === 3) {
       $(".attack3").on("click", function () {
@@ -108,9 +126,10 @@ $(document).ready(function () {
         }
       });
     }
+
     //card4
     else if (globalCounter === 4) {
-      $(".attack4").on("click", function () {
+      $(".attack4").on("click", function() {
         card4Object.attack4Total = Math.floor((Math.random()) * 45);
         card2Object.health2Total = card2Object.health2Total - card4Object.attack4Total;
         card3Object.health3Total = card3Object.health3Total - card4Object.attack4Total;
@@ -120,7 +139,6 @@ $(document).ready(function () {
         $("#health3Left").text(card3Object.health3Total);
         $("#health1Left").text(card1Object.health1Total);
         $("#health4Left").text(card4Object.health4Total);
-
         if ($("#health1Left").text() < 0) {
           card1Object.card1.remove();
           card3Object.card3.remove();
@@ -132,15 +150,13 @@ $(document).ready(function () {
     };
   };
 
-
-
-
   //select functions//
   //card1
   $(".select1").on("click", function () {
     console.log("clicked worked");
     globalCounter = 1;
     attack();
+    showA(card1Object.attackBtn);
     $(".0").append(card1Object.card1);
     $(".4").append(card2Object.card2);
     $(".4").append(card3Object.card3);
@@ -152,6 +168,7 @@ $(document).ready(function () {
     console.log("clicked worked");
     globalCounter = 2;
     attack();
+    showA(card2Object.attackBtn);
     $(".0").append(card2Object.card2);
     $(".4").append(card1Object.card1);
     $(".4").append(card3Object.card3);
@@ -163,6 +180,7 @@ $(document).ready(function () {
     console.log("clicked worked");
     globalCounter = 3;
     attack();
+    showA(card3Object.attackBtn);
     $(".0").append(card3Object.card3);
     $(".4").append(card1Object.card1);
     $(".4").append(card2Object.card2);
@@ -174,11 +192,11 @@ $(document).ready(function () {
     console.log("clicked worked");
     globalCounter = 4;
     attack();
+    showA(card4Object.attackBtn);
     $(".0").append(card4Object.card4);
     $(".4").append(card1Object.card1);
     $(".4").append(card3Object.card3);
     $(".4").append(card2Object.card2);
   });
-
 
 });
